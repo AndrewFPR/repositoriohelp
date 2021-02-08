@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import {MarvelApiService} from './marvel-api.service';
 import {HttpClientModule} from '@angular/common/http';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -28,6 +29,7 @@ import {MatCardModule} from '@angular/material/card';
     HttpClientModule,
     MatCardModule,
     MatToolbarModule,
+    NgxPaginationModule
   ],
   providers: [MarvelApiService],
   bootstrap: [AppComponent]

@@ -1,6 +1,6 @@
 .img{
-    max-height: 15em;;
-};
-.card{
-    margin: 30%;
+    height: 15em;
+}
+.slider{
+    background-color: rgb(211, 201, 201);
 }
