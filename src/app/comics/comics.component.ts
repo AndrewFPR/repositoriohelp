@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MarvelApiService } from "../marvel-api.service";
 
 @Component({
   selector: 'app-comics',
@@ -7,11 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ComicsComponent implements OnInit {
 
-  constructor() { }
+  constructor(public MarvelComics : MarvelApiService) { }
 
+  comics:any=[];
   ngOnInit(): void {
   }
 
+ 
 
 
 }
