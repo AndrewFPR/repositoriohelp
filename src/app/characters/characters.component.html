@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="row">
+        <div class="col-6 card" *ngFor="let character of characters | async">
+            <div class="row">
+            <img class="img card-img-left col-6 " src="{{character.thumbnail.path}}.{{character.thumbnail.extension}}" alt="{{character.name}}">
+        
+        <div class="col-6 card-body ">
+            <h3 class="card-title ">{{character.name}}</h3>
+            <p class="card-text">{{character.description}}</p>
+            <button type="button" class="btn btn-danger">Comics</button>
+        </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+<div class="repo" fxFlex="30" fxLayout="center center"></div>
