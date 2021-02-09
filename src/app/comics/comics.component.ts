@@ -9,7 +9,7 @@ import { MarvelApiService } from "../marvel-api.service";
 export class ComicsComponent implements OnInit {
 
   constructor(public MarvelComics : MarvelApiService) { }
-
+  test:boolean = false;
   comics:any=[];
   ngOnInit(): void {
   }

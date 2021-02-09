@@ -1,30 +1,26 @@
-<div class="container-fluid row p-0 m-0">
-    <div class="col-9">
-        <div class="row justify-content-around">
-            <h5>Characters</h5>
-            <div class=" card col-5 mt-3"
-                *ngFor="let character of characters | paginate: { itemsPerPage: 10, currentPage: pages}">
-                <div class="row">
+<div class="container-fluid row m-0 contain-all">
+  <div class="row justify-content-around">
+    <h5>Characters</h5>
+    <div class="card col-3 p-0 card-character"
+        *ngFor="let character of characters | paginate: { itemsPerPage: 10, currentPage: pages}">
+        <div class="row-css">
 
-                    <img class="card-img-left col-6 img"
-                        src="{{character.thumbnail.path}}.{{character.thumbnail.extension}}" alt="{{characters.name}}">
-
-                    <div class=" card-body col-6 ">
-                        <h5 class="card-title ">{{character.name}}</h5>
-                        <p class="card-text">{{character.comics.items.name}}</p>
-
-
-                        <button type="button" class="btn btn-danger">Comics</button>
-                    </div>
-                </div>
+            <div class="contain-img col-6">
+              <img class="card-img-left col-6 img-character"
+                src="{{character.thumbnail.path}}.{{character.thumbnail.extension}}" alt="{{characters.name}}">
             </div>
-        
-                <pagination-controls (pageChange)="pages = $event"></pagination-controls>
-            
-        </div>
 
+            <div class=" card-body col-6 ">
+                <h5 class="card-title ">{{character.name}}</h5>
+                <p class="card-text">{{character.comics.items.name}}</p>
+                <p class="card-text">{{description(character)}}</p>
+
+                <button type="button" class="btn btn-danger" (click)="test(character)">Comics</button>
+            </div>
+        </div>
     </div>
-    <div class="col-3 slider">
-        <h5>Comics</h5>
-    </div>
+
+    <pagination-controls (pageChange)="pages = $event"></pagination-controls>
+      
+  </div>
 </div>

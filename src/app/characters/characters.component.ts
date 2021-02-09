@@ -11,25 +11,34 @@ import { MarvelApiService } from "../marvel-api.service";
 })
 export class CharactersComponent implements OnInit {
 
-characters:any=[];
+  characters: any = [];
 
-pages:number =1;
+  pages: number = 1;
   constructor(public MarvelService: MarvelApiService) { }
 
+  test(value: any){
+    console.log(value)
+    console.log('Entro')
+  }
+
+  description(data: any){
+    if(data.description == '' || data.description == null){
+      return 'No hay una descripción para este HEROE'
+    }
+    return data.description
+  }
 
   ngOnInit(): void {
-  this.showHeros();
+    this.showHeros();
+  }
 
-}
+  showHeros() {
+    this.MarvelService.getHeros().subscribe(
+      (characters: any) => {
+        console.log(this.characters = characters);
+      }
+    );
+  }
 
-showHeros(){
-  this.MarvelService.getHeros().subscribe(
-    (    characters: any)=>{
-     console.log( this.characters = characters);
-    }
-  );
-
-
-}
 }
 
